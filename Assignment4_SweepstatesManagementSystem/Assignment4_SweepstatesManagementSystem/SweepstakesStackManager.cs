@@ -8,14 +8,17 @@ namespace Assignment4_SweepstatesManagementSystem
 {
     class SweepstakesStackManager : ISweepstakesManager
     {
+        public Stack<Sweepstakes> sweepStakesStack = new Stack<Sweepstakes>();
+
         public Sweepstakes GetNextSweepstakesWinner()
         {
-            throw new NotImplementedException();
+            return sweepStakesStack.Pop();
+
         }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            throw new NotImplementedException();
+            sweepStakesStack.Push(sweepstakes);
         }
     }
 }
