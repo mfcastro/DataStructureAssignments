@@ -18,7 +18,7 @@ namespace Assignment5_AdvancedCalculator
 
         public CalculatorMathLogic(EquationFactory equation)
         {
-            this.calculationList = equation.calculationList;
+            this.calculationList = equation.calculationList; 
             DetermineCalculation();
             DoCalculation();
         }
@@ -45,8 +45,9 @@ namespace Assignment5_AdvancedCalculator
                     currentOperator = this.calculationList[i].operatorType;
                 }
 
-                DoCalculation();
             }
+
+            DoCalculation();
         }
 
 

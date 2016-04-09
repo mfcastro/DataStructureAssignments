@@ -15,8 +15,11 @@ namespace Assignment5_AdvancedCalculator
         {
             Console.WriteLine("Enter a calculation. Ex. 3+5");
             equation = Console.ReadLine();
-
-            if (CheckIfInputIsEquation(equation) == true)
+            if (equation.Equals("c"))
+            {
+                ClearCalculator();
+            }
+            else if (CheckIfInputIsEquation(equation) == true)
             {
                 return equation;
             }
@@ -42,5 +45,11 @@ namespace Assignment5_AdvancedCalculator
 
             return contains;
         }
+
+        public int ClearCalculator()
+        {
+            return 0;
+        }
+
     }
 }

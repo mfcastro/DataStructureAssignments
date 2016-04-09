@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//factory pattern
 
 namespace Assignment5_AdvancedCalculator
 {
@@ -57,5 +56,31 @@ namespace Assignment5_AdvancedCalculator
                 }
             }
         }
+
+
+        public int MoreThanOneDigit(char x)
+        {
+            int num = 0;
+            int moreThanOneInt = 1;
+            string currentInt = "";
+            string current;
+
+
+            int.TryParse(x.ToString(), out num);
+            current = x.ToString();
+
+            if (moreThanOneInt == 1)
+            {
+                moreThanOneInt = 2;
+                currentInt += current;
+            }
+            else if (moreThanOneInt == 2)
+            {
+                num = int.Parse(currentInt + current);
+            }
+
+            return num;
+        }
+
     }
 }

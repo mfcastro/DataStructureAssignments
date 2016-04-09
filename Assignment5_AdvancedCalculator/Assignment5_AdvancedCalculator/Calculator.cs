@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-//Facade Pattern
 namespace Assignment5_AdvancedCalculator
 {
     class Calculator
@@ -14,21 +13,27 @@ namespace Assignment5_AdvancedCalculator
         string calculation;
         public EquationFactory equationToCalculate;
         public CalculatorMathLogic mathLogic;
-
+        double total;
 
         public Calculator()
+        {
+            RunCalculator();   
+        }
+
+        public void PrintTotal()
+        {
+            this.total = mathLogic.total;
+            Console.WriteLine("Total: {0}", mathLogic.total);
+        }
+
+        public void RunCalculator()
         {
             userInput = new UserInput();
             calculation = userInput.GetUserInput();
             equationToCalculate = new EquationFactory(calculation);
             mathLogic = new CalculatorMathLogic(equationToCalculate);
             mathLogic.DetermineCalculation();
-            PrintTotal(); 
-        }
-
-        public void PrintTotal()
-        {
-            Console.WriteLine("Total: {0}", mathLogic.total);
+            PrintTotal();
         }
     }
 }
